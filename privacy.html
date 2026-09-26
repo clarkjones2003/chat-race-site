@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chat Race — Privacy Policy</title>
+<!--
+  Every factual claim in this page was taken from the code and the schema on
+  2026-09-24, not from a template:
+
+    profiles                supabase/0001_profiles.sql  (id, name, color_key)
+    rooms / room_players    supabase/0002_rooms.sql     (code, host, status, seats)
+    match_results           supabase/0003_race.sql      (name+colour snapshot,
+                                                         points, place, created_at)
+    delete_my_data()        supabase/0005_delete_my_data.sql
+    live progress           src/lib/raceSync.ts — Realtime broadcast, no replay,
+                                                   nothing persisted
+    on the phone            src/lib/profile.ts, src/lib/settings.ts, src/lib/stats.ts
+                            (AsyncStorage; stats added 2026-09-26)
+    no tracking SDKs        17 dependencies in package.json, none analytics,
+                            advertising, attribution or crash reporting
+
+  IF THE APP CHANGES, THIS PAGE HAS TO CHANGE WITH IT. The two claims most
+  likely to go stale are "no ads" and "no analytics" — see SHIP.md §5.
+
+  Contact address: senoj213478@gmail.com (set 2026-09-24).
+-->
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto; padding: 40px 22px 80px; max-width: 700px;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #2E2E36; background: #F3F6FF;
+  }
+  h1 { font-size: 30px; line-height: 1.15; letter-spacing: -0.5px; margin: 0 0 6px; }
+  h2 { font-size: 19px; margin: 34px 0 8px; letter-spacing: -0.2px; }
+  .updated { color: #6b6b76; font-size: 14px; margin: 0 0 28px; }
+  p, li { margin: 0 0 12px; }
+  ul { padding-left: 22px; }
+  strong { font-weight: 650; }
+  code { background: rgba(0,0,0,.06); padding: 1px 5px; border-radius: 4px; font-size: 14px; }
+  .box {
+    background: #fff; border-radius: 14px; padding: 18px 20px; margin: 22px 0;
+  }
+  .box p:last-child, ul li:last-child { margin-bottom: 0; }
+  a { color: #2446D8; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #E6E6EC; background: #16161b; }
+    .box { background: #20202a; }
+    code { background: rgba(255,255,255,.1); }
+    .updated { color: #9a9aa3; }
+    a { color: #8fb0ff; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Chat Race — Privacy Policy</h1>
+<p class="updated">Last updated 24 September 2026</p>
+
+<p>Chat Race is a typing race game. This page explains exactly what it stores, who can see it,
+and how to get rid of it. It is written in plain English on purpose — there is not much to say,
+and saying it clearly is more useful than saying it like a lawyer.</p>
+
+<div class="box">
+  <p><strong>The short version.</strong> There is no sign-up. Chat Race never asks for your email,
+  your phone number or a password, and it never asks for your contacts, your location or your
+  photos. It stores a display name you choose, a colour you pick, and the results of races you
+  play with friends. There are no analytics, no trackers and no advertising in the app. You can
+  delete everything from inside the app at any time.</p>
+</div>
+
+<h2>There is no account to sign up for</h2>
+<p>The first time you open Chat Race it creates an <strong>anonymous account</strong> for you in the
+background. It is a random identifier and nothing else — it is not linked to your name, your Apple
+ID, your email or your phone number, and there is nothing to log in to. Its only job is to let the
+app remember which player is you when you race friends.</p>
+
+<h2>What is stored, and where</h2>
+<p>On servers run by <a href="https://supabase.com/privacy">Supabase</a> (hosted in the United
+States, in their US East region):</p>
+<ul>
+  <li><strong>Your display name</strong> — whatever you typed, up to 20 characters. You choose it;
+      the app suggests a random one and you can keep that.</li>
+  <li><strong>Your colour</strong> — which of six colours you picked.</li>
+  <li><strong>Rooms you create or join</strong> — the four-character room code, who is in it, and
+      when. Room codes are reused once a room closes.</li>
+  <li><strong>Results of finished matches</strong> — your points and finishing place, with your
+      name and colour as they were at the time, so an old result still reads correctly if you
+      rename yourself later.</li>
+</ul>
+
+<p>On your phone only, and never sent anywhere:</p>
+<ul>
+  <li>A copy of your name and colour, so the app works before it reaches the network.</li>
+  <li>Your haptics and reduce-motion preferences.</li>
+  <li>Your best typing speed, and how many races and matches you have played and won.</li>
+  <li>The token for your anonymous account.</li>
+</ul>
+
+<h2>What is shared while you race</h2>
+<p>When you race friends in a room, the app sends your <strong>typing progress</strong> — how many
+characters of the phrase you have correct — and whether you have finished, to the other players in
+that room, several times a second. That is what moves your avatar along their screens.</p>
+<p><strong>This is not recorded.</strong> It is sent live to the people in the room and is not
+written down anywhere, by us or by anyone else. What you actually typed is never sent at all —
+only how far through the phrase you are. When the match ends, only the final points and places are
+saved.</p>
+<p>The other players in a room can see your display name, your colour and your progress. That is
+the game. They cannot see anything else about you, because there is nothing else.</p>
+
+<h2>What is <em>not</em> collected</h2>
+<ul>
+  <li>No email address, phone number or password.</li>
+  <li>No contacts, location, photos, microphone or camera.</li>
+  <li>No advertising identifier, and no advertising.</li>
+  <li>No analytics, no usage tracking, no crash reporting, and no third-party tracking software of
+      any kind. The app has 17 software dependencies and not one of them is an analytics,
+      advertising, attribution or crash-reporting library.</li>
+  <li>Nothing is sold, and nothing is shared with anyone for advertising.</li>
+</ul>
+
+<h2>Deleting everything</h2>
+<div class="box">
+  <p>Open <strong>Settings</strong> from your avatar on the home screen, then tap
+  <strong>Delete my data</strong>.</p>
+  <p>That immediately deletes your name, your colour, your seat in any room, and every match result
+  you have. Any room you are currently hosting is closed. You are signed out of your anonymous
+  account and the app starts over as if it were newly installed.</p>
+  <p>It cannot be undone, and it is not reversible by asking us — once the rows are gone they are
+  gone.</p>
+</div>
+<p>Two honest details. First, deleting removes your result rows from matches you played, which means
+you also disappear from those friends' saved results for that match — there is one row per player
+per match and yours is yours. Second, the anonymous identifier itself remains in the
+authentication system as an empty record with no name, colour, results or rooms attached to it,
+because the app deliberately does not carry the credentials that would let it delete that record.
+Nothing about you is attached to it.</p>
+<p>Deleting the app from your phone removes everything stored on the phone, but does not by itself
+delete what is on the server — use <strong>Delete my data</strong> first if that is what you want.</p>
+
+<h2>How long things are kept</h2>
+<p>Your name, colour and match results are kept until you delete them. Rooms are closed
+automatically once they have clearly been abandoned, which frees their code for reuse.</p>
+
+<h2>Children</h2>
+<p>Chat Race is not directed at children under 13, and it does not knowingly collect information
+from them. It asks for no personal information from anyone. If you believe a child has provided
+information through the app, contact us using the address below and it will be deleted.</p>
+
+<h2>Your rights</h2>
+<p>Depending on where you live — for example in the UK, the EU or California — you may have rights
+to access, correct or delete your information, and to object to how it is used. In practice,
+Chat Race gives everyone all of these from inside the app: you can see your name and colour on the
+settings screen, change them whenever you like, and delete everything with one tap. If you would
+rather ask, use the address below.</p>
+
+<h2>Changes to this policy</h2>
+<p>If Chat Race starts collecting anything new, this page will be updated before that version ships
+and the date at the top will change.</p>
+
+<h2>Contact</h2>
+<p>Questions about any of this, or about your data: <strong>senoj213478@gmail.com</strong>.</p>
+
+</body>
+</html>
